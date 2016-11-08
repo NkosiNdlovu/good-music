@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Good Music</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- API key        fdbb84c18b70ac53377deb45f49f1e84 -->
+	<!-- Shared secret	f6632cb048e997d29230fa1db90e6605 -->
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Good Music</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+					<li>
+                        <a class="page-scroll" href="#lastfm">last.fm</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#musicbrainz">Music Brainz</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#shortlist">Short list</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#favourites">Favourites</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Search for Artist</h1>
+                <hr>
+                <p>The best music online search!</p>
+                <a href="#lastfm" class="btn btn-primary btn-xl page-scroll">Search</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="lastfm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">We've got what you need from Last FM!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Search for your favourable artist</p>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="txt-search" placeholder="Artist name ...">
+					</div>
+                    <a id="btn-search-artist" href="#lastfm" class="btn btn-default btn-xl " onclick="javascript:searchForArtists();return false;">Search</a>
+					<div id="search-results" align="left">
+						
+					</div>
+                </div>
+				
+            </div>
+			
+        </div>
+    </section>
+
+    <section id="shortlist">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Short List</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="shortlist-results" align="left">
+				<div class="list-group" id="short-list-group">
+				
+				</div>
+			</div>
+        </div>
+    </section>
+
+	
+    <section class="bg-primary" id="musicbrainz">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">We've got what you need from Music Brainz!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Search for your favourable artist</p>
+					<div class="form-group">
+					  <input type="text" class="form-control" id="txt-search-musicbrainz" placeholder="Artist name ...">
+					</div>
+                    <a id="btn-search-artist-musicbrainz" href="#musicbrainz" class="btn btn-default btn-xl " onclick="javascript:searchForArtistsOnMusicbrainz();return false;">Search</a>
+					<div id="search-results-musicbrainz" align="left">
+						
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <section class="no-padding" id="favourites">
+        
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Favourites</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+			<div class="container-fluid">
+				<div id = "favourites-list"  class="row no-gutter popup-gallery">
+					<span style="text-align:center"><h2>No favourites saved</h2></span>
+				</div>
+			</div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Remove from favourites</h2>
+				<select class="form-control" placeholder="select artist to remove">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+				<p></p>
+                <a href="" class="btn btn-default btn-xl sr-button" onclick="alert('Download coming soon!!!')">Remove selected</a>
+                <a href="" class="btn btn-default btn-xl sr-button" onclick="alert('Download coming soon!!!')">Clear all</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>You can email us for any artist that enquires that you have!!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p> +27 (0) 12-456-6145</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="mailto:your-email@your-domain.com">nkosi@GoodMusic.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script src="js/creative.min.js"></script>
+
+	 <script type="text/javascript">
+        $(document).ready(function () {
+			loadfavourites();
+		});
+		
+		var artistsMusicbrainz
+		var artists;
+		var favourites;
+		var shortList = [];
+		
+		function searchForArtists()
+		{
+			var artistName = $("#txt-search").val();
+			$.ajax({
+				type: "GET",
+				url: "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artistName + "&api_key=fdbb84c18b70ac53377deb45f49f1e84&format=json",
+				dataType: "json",
+				success: function (data, textStatus, jqXHR) {
+					artists = data.results.artistmatches.artist; 
+					var list = $("#search-results").html('<div class="list-group" id="search-list-group"></div>');
+					
+					if (artists.length == 0)
+					{
+						$(list).append('<h3>No results found.</h3>');
+					}
+					
+					for (var i = 0; i < artists.length; i ++){
+						$(list).append('<a href="#" onclick="return false;" class="list-group-item list-group-item-action"><table><tr><td> <div style= "padding-right:8px;" > <img src="'+ artists[i].image[1]["#text"] +'" /> </div> </td><td> <div ><h5 class="list-group-item-heading">' + artists[i].name + ' <a href="#" id ="btn-addToShortlist-'+ i +'" class="btn btn-default" onclick="addToShortlist('+ i +') ;return false;"><span class= "glyphicon glyphicon-thumbs-up"></span></a></h5><p class="list-group-item-text">'+ artists[i].url +'</p></div> </td><td></td></tr></table></a>');
+						
+					}
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+					alert("Error: " + errorThrown)
+				}
+			});				
+		}
+		
+		function searchForArtistsOnMusicbrainz()
+		{
+			var artistName = $("#txt-search-musicbrainz").val();
+			
+			$.ajax({
+				type: "GET",
+				url: "http://musicbrainz.org/ws/2/release/?query=artist:" + artistName ,
+				dataType: "xml",
+				success: function (data, textStatus, jqXHR) {
+					var releases = data.childNodes[0].childNodes[0]; 
+					var list = $("#search-results-musicbrainz").html('<div class="list-group" id="search-list-group-musicbrainz"></div>');
+					if (releases.childElementCount == 0)
+					{
+						$(list).append('<h3>No results found.</h3>');
+					}
+					for (var i = 0; i < releases.childElementCount; i ++){
+						var title = releases.childNodes[i].childNodes[0]["textContent"];
+						var year = releases.childNodes[i].childNodes[5]["textContent"];
+						var numberOfTrack = releases.childNodes[i].childNodes[8].childNodes[0]["textContent"];
+						var artist = releases.childNodes[i].childNodes[3].childNodes[0].childNodes[0].childNodes[0]["textContent"];
+						
+						$(list).append('<a href="#" onclick="return false;" class="list-group-item list-group-item-action"><table><tr><td> <div style= "padding-right:8px;" > <h3>' + artist +' </h3></div>  </td><td> <div ><h5 class="list-group-item-heading">' + title + ' ( '+ numberOfTrack +' tracks)  <a href="#" id ="btn-addToShortlist-'+ i +'" class="btn btn-default" ><span class= "glyphicon glyphicon-thumbs-up"></span></a></h5><p class="list-group-item-text">'+ year +'</p></div> </td><td></td></tr></table></a>');
+					}
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+					alert("Error: " + errorThrown)
+				}
+			});				
+		}
+		
+		function addTofavourites(i)
+		{
+			//var list = $("#favourites-list");
+			var f = JSON.parse(window.localStorage.getItem("favourites2"));
+			if (!f)
+			{
+				window.localStorage.setItem("favourites2", []);
+				f = [];
+			}
+			f.push(shortList[i]);
+			window.localStorage.setItem("favourites2", JSON.stringify(f));
+			addfavouriteElement(shortList[i].image[4]["#text"],shortList[i].name,shortList[i].url);
+			alert('Artist successfully added to the favourites!');
+			return;
+			
+		}
+		
+		function addfavouriteElement(image,name,url)
+		{
+			var list = $("#favourites-list");
+			var element = '<div class="col-lg-4 col-sm-6" >  \
+						<input id = "btn-remove-'+ name +'" onclick= "alert(\'\');removeFavourites('+ name +');" class= "glyphicon glyphicon-heart" type="button" style="background-color: Transparent;border: none;position:absolute;float:top;z-index:1000;" value="Remove">\
+						<a href="'+ image +'" class="portfolio-box"> \
+                        <img style = "height:300px;width: 100%" src="'+ image +'" class="img-responsive" alt=""> \
+						<div class="portfolio-box-caption"> \
+                            <div class="portfolio-box-caption-content"> \
+                                <div class="project-category text-faded"> \
+                                    '+ name +'  \
+                                </div> \
+                                <div class="project-name"> \
+                                    '+ url +' \
+                                </div> \
+                            </div> \
+                        </div> \
+                    </a>  \
+                </div>';
+			
+			$(list).append(element);
+			
+			$("#btn-remove-" + name).click(function(){
+				//removeFavourites(name);
+			});
+			
+		}
+		function addToShortlist(i)
+		{
+			var list = $("#short-list-group");
+			shortList.push(artists[i]);
+			var x = shortList.length - 1;
+			$(list).append('<a href="#" onclick="return false;" class="list-group-item list-group-item-action"><table><tr><td> <div style= "padding-right:8px;" > <img src="'+ artists[i].image[1]["#text"] +'" /> </div> </td><td> <div ><h5 class="list-group-item-heading">' + artists[i].name + ' <a href="#" class="btn btn-default" onclick="addTofavourites ('+ x +') ;return false;"><span class= "glyphicon glyphicon-heart"></span></a></h5><p class="list-group-item-text">'+ artists[i].url +'</p></div> </td><td></td></tr></table></a>');
+			alert('Artist successfully added to the short list!');
+		}
+
+		function loadfavourites()
+		{
+			$("#favourites-list").html("");
+			var f = JSON.parse(window.localStorage.getItem("favourites2"));
+			for (var i = 0; i < f.length; i ++){
+				addfavouriteElement(f[i].image[4]["#text"],f[i].name,f[i].url);
+			}
+		}
+		
+		function removeFavourites(name)
+		{
+			var f = JSON.parse(window.localStorage.getItem("favourites2"));
+			for (var i = 0; i < f.length; i ++){
+				if (f.name == name)
+				{
+					f.remove(i);
+				}
+			}
+		}
+		
+    </script>
+</body>
+
+</html>
