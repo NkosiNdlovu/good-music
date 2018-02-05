@@ -1,4 +1,4 @@
-# [Good Music]
+# Good Music
 
 ## Getting Started
 
